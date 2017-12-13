@@ -2,8 +2,14 @@ import * as React from "react";
 
 import "./HighOrder.css"
 
-const HighOrderComponent = <T extends{}>(Component: (React.ComponentClass<T>))=> {
-    const result = class extends React.Component<T> {
+export interface InjectedProps {
+    style?:React.CSSProperties
+}
+
+const HighOrderComponent = <TOriginalProps extends{}>(Component: (React.ComponentClass<TOriginalProps & InjectedProps>))=> {
+    const result = class extends React.Component<TOriginalProps & InjectedProps> {
+        static displayName = `Wrapped(${Component.name})`
+
         constructor(props:any) {
             super(props);
         }

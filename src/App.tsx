@@ -10,7 +10,7 @@ class App extends React.Component {
         return (
             <div className="App">
                 <LowOrder text={"AAA"}/>
-                <Wrapped text={"BBB"}/>
+                <Wrapped text={"BBB"} style={{background: "red"}}/>
                 <Counter/>
                 <Timer/>
                 <Counter/>
