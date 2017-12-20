@@ -14,10 +14,12 @@ interface State {
 }
 
 interface Props {
+    count: number;
     initPosX: number;
     initPosY: number;
     width: number;
     height: number;
+    addCount:(delta:number)=>{};
 }
 
 const logo = require('../../logo.svg');
