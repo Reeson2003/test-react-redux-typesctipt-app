@@ -46,18 +46,27 @@ const mapStateToProps = (state: State): StateFromProps => {
     };
 };
 
+const setText = (text: string): Actions => {
+    return {
+        type: 'SET_TEXT',
+        text: text
+    };
+};
+
+const clearText = ():Actions => {
+    return {
+        type: 'CLEAR_TEXT'
+    };
+};
+
 const mapDispatchToProps = (dispatch: Dispatch): DispatchFromProps => {
     return {
         onSetText: (text) => {
-            dispatch({
-                type: 'SET_TEXT',
-                text: text
-            });
+            console.log(text);
+            dispatch(setText(text));
         },
         onClearText: () => {
-            dispatch({
-                type: 'CLEAR_TEXT'
-            });
+            dispatch(clearText());
         }
     }
 };
