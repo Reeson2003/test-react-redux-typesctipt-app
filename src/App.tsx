@@ -93,7 +93,7 @@ const textReducer = (store = initialStore, action: Actions) => {
         return {
             text: action.text
         };
-    else if (action.type = 'CLEAR_TEXT')
+    else if (action.type === 'CLEAR_TEXT')
         return {
             text: ''
         };
